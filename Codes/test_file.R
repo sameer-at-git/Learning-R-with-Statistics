@@ -108,18 +108,88 @@ x11
 
 
 #Fourth Section ####
+x7
+x7<5
+x7>4
+x7[4]
+x7[1:3]
+x7[3:4]
+length(x7)
+x7
+x7[c(FALSE,TRUE,TRUE,TRUE,FALSE)]
+x7[c(2,3,4)]
+x7[x7<5 & x7>1] #values of said cond'n.
+which(x7<5 & x7>1) #indexes of said cond'n.
+x7[which(x7<5 & x7>1)] #values of indexes of said cond'n
+x7
+replace(x7,x7<5,5)
+
+
+m1
+m1[,]
+m1[,2]
+m1[2,]
+m1[2,2]
+m1[2,2]<-0
+m1[,]
+dim(m1)
 
 
 
+df1<-data.frame(id=c(1,2,3),
+                name=c("Ajmal",NA,"Chuchu"),
+                age=c(10,20,15)
+                )
+df1
+is.data.frame(df1)
+summary(df1)
+is.na(df1)
+which(is.na(df1))
+df1[2,2]
+df1[2,2]<-"Bashir"
+df1
+summary(df1)
+
+df2<-data.frame(id=c(1,2,3),
+                gender=factor(c("Male","Female","Male")),
+                age=c(10,20,15)
+)
+df2
+summary(df2)
+
+df3<-data.frame(id=c(1,2,3),
+           name=c("Male","Female","Male"),
+           age=c(10,20,15), stringsAsFactors = TRUE
+)
+summary(df3)
+m1
+diag(m1)
+solve(m1)
+m3<-matrix(c(1,2,3,4),nrow=2)
+solve(m3)  #reverse matrix iff det(matrix)!=0
+
+df3$age
+mean(df3$age)
+rownames(df2)
+colnames(df2)
 
 
+#Fifth Section ####
+df1
+df1$country
+df1
+df1$country <- c("Ban","Ind","Pak")
+df1
+summary(df1)
+summary(df3)
+df3$country<-c("Ban","Ind","Pak")
+summary(df3) 
+df3
+df3[3,c(3,4)]
+df3$age<18
+df3[df3$age<18,]
 
-
-
-
-
-
-
+df3$age_month <- df3$age * 12
 
 
 
