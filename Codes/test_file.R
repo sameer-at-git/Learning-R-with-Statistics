@@ -190,8 +190,19 @@ df3$age<18
 df3[df3$age<18,]
 
 df3$age_month <- df3$age * 12
+ls1 <- list(c(1,2,4),c('1','2'), "Abracadabra")
+ls1
+ls1[[2]]
+#basically it selects a vector from the list element
+ls1[[2]][2]
+ls1[[3]]
+ls1[[3]][1]
+ls1[[3]][2]
+#now it selects an element from the vector
 
-
-
-
-
+df3
+ls2 <- list(serial=c(0,1,2,3),height=c(4,3,2), df=df3)
+ls2
+ls2$df[1,]
+ls2$df[1]
+str(ls2)
