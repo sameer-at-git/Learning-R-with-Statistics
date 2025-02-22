@@ -274,15 +274,66 @@ tapply(X=df3$age,INDEX=df3$name,FUN=sum)
 
 tapply(X=df3$age,INDEX=list(df3$name,df3$x),FUN=sum)
 tapply(X=df3$age,INDEX=list(df3$name,df3$x,df3$id),FUN=sum)
+#lapply
+#sapply
 
 
+#functions:
+a <- function(x,y){
+  print(paste("x=",x))
+  print(paste("y=",y))
+  return (x+y)
+}
+
+a(10,29)
+a(y=10,x=5)
 
 
+calc <- function(x,y,op){
+  switch(op,
+         "add" = x + y,
+         "subtract" = x - y,
+         "multiply" = x * y,
+         "divide" = if(y!=0)(x/y) else warning("Cant Divide by Zero")
+         )
+}
+
+calc(10,5,"divide")
+calc(10,0,"divide")
+#similar keywords as warning are- message(),cat()
 
 
+begin <- function(){
+  timer <<- Sys.time();
+  message("Program Started at : ",timer)
+  }
+
+begin()
+
+timer+3
+#timer is now a global env variable and can be used anywhere
+
+mtcars
+iris
+#builtin datasets
 
 
+wrapper_mean <- function(data, ...){
+  if(is.numeric(data)){
+    mean(data, ...)
+  }
+  else{
+    warning("Data Not Numeric")
+  }
+}
 
+wrapper_mean(c(2,3,4,NA,3))
+wrapper_mean(c(2,3,4,NA,'3'))
+wrapper_mean(c(2,3,4,NA,'3'), na.rm= TRUE)
+wrapper_mean(c(2,3,4,NA,3), na.rm= TRUE)
+
+
+#R-basics Ends here ####
 
 
 
